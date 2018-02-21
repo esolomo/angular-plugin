@@ -1,10 +1,6 @@
 
 // App module
-var dnsApp =  angular.module('dnsApp', [	'ng',
-'ngResource',
-'ngSanitize',
-'ui.router',
-'ngAnimate']
+var dnsApp =  angular.module('dnsApp', []
 )
 .controller('TodoListController', function() {
     var todoList = this;
