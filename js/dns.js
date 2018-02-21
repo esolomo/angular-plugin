@@ -1,11 +1,12 @@
+
 // App module
-var dnsApp = angular.module('dnsApp', [[
+var dnsApp = angular.module('dnsApp', [
 	'ng',
 	'ngResource',
 	'ngSanitize',
 	'ui.router',
 	'ngAnimate'
-] );
+]);
 
 // Third-party support
 dnsApp.constant( '_', window._ );
@@ -16,7 +17,6 @@ dnsApp.config( function( $urlRouterProvider, $locationProvider ) {
 	$locationProvider.html5Mode( true );
 	$urlRouterProvider.otherwise( '/not-found/' );
 } );
-
 
 // Boot
 dnsApp.run( function( $rootScope, _ ) {
