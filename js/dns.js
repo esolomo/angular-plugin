@@ -100,10 +100,10 @@ dnsApp.controller('TodoListController', function($scope,  $window) {
 
 });
 
-dnsApp.controller('TodoListController2', function($scope, $window) {
+dnsApp.controller('TodoListController2', function($scope) {
   var todoList = this;
   console.log("In the controller 2 Hello World");
-  console.log(JSON.stringify($window.WP));
+  //console.log(JSON.stringify($window.WP));
   console.log(JSON.stringify(WP));
   //console.log(JSON.stringify($stateProvider));
   todoList.todos = [
