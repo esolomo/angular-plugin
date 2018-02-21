@@ -10,7 +10,7 @@ var dnsApp =  angular.module('dnsApp', [
 
 // Third-party support
 dnsApp.constant( '_', window._ );
-dnsApp.constant( 'WP', $window.WP );
+//dnsApp.constant( 'WP', $window.WP );
 
 // Routing
 dnsApp.config( function( $urlRouterProvider, $locationProvider ) {
@@ -29,49 +29,49 @@ dnsApp.run( function( $rootScope, _ ) {
 } );
 
 // Route
-dnsApp.config( function( $stateProvider, WP ) {
+dnsApp.config( function( $stateProvider, $window ) {
   $stateProvider.state( {
       name: 'dns',
       url: '/dns',
-      templateUrl: WP.plugin_url + '/views/dashboard.html',
+      templateUrl: $window.WP.plugin_url + '/views/dashboard.html',
       controller: 'TodoListController'
   } );
 } );
 
 // Route
-dnsApp.config( function( $stateProvider, WP ) {
+dnsApp.config( function( $stateProvider, $window ) {
   $stateProvider.state( {
       name: 'dnsi',
       url: '/index.php/api/dns',
-      templateUrl: WP.plugin_url + '/views/dashboard.html',
+      templateUrl: $window.WP.plugin_url + '/views/dashboard.html',
       controller: 'TodoListController2'
   } );
 } );
 
 // Route
-dnsApp.config( function( $stateProvider, WP ) {
+dnsApp.config( function( $stateProvider, $window ) {
   $stateProvider.state( {
       name: 'dnsapi',
       url: '/api/dns',
-      templateUrl: WP.plugin_url + '/views/dashboard.html',
+      templateUrl: $window.WP.plugin_url + '/views/dashboard.html',
       controller: 'TodoListController'
   } );
 } );
 
 // Route
-dnsApp.config( function( $stateProvider, WP ) {
+dnsApp.config( function( $stateProvider, $window ) {
   $stateProvider.state( {
       name: 'dns2',
       url: '/',
-      templateUrl: WP.plugin_url + '/views/dashboard.html',
+      templateUrl: $window.WP.plugin_url + '/views/dashboard.html',
       controller: 'TodoListController'
   } );
 } );
 
-dnsApp.controller('TodoListController', function($scope,  WP) {
+dnsApp.controller('TodoListController', function($scope,  $window) {
   var todoList = this;
   console.log("In the controller");
-  console.log(WP.user_login);
+  console.log($window.WP.user_login);
   todoList.todos = [
     {text:'learn AngularJS', done:true},
     {text:'build an AngularJS app', done:false}];
@@ -99,10 +99,10 @@ dnsApp.controller('TodoListController', function($scope,  WP) {
 
 });
 
-dnsApp.controller('TodoListController2', function($scope, WP) {
+dnsApp.controller('TodoListController2', function($scope, $window) {
   var todoList = this;
   console.log("In the controller 2 Hello World");
-  console.log(JSON.stringify(WP));
+  console.log(JSON.stringify($window.WP));
   //console.log(JSON.stringify($stateProvider));
   todoList.todos = [
     {text:'learn AngularJS', done:true},
