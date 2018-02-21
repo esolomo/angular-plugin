@@ -60,6 +60,16 @@ dnsApp.config( function( $stateProvider, WP ) {
 } );
 
 // Route
+dnsApp.config( function( $stateProvider, WP ) {
+  $stateProvider.state( {
+      name: 'records',
+      url: '/api/records/:zoneId',
+      templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/records.html',
+      controller: 'RecordsCtrl'
+  } );
+} );
+
+// Route
 dnsApp.config( function( $stateProvider, WP) {
   $stateProvider.state( {
       name: 'dns2',
@@ -104,6 +114,30 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
   var todoList = this;
   var config = {
     params: { 'username' : WP.user_login},
+    headers : {'Content-Type' : 'application/json'}
+   };
+  console.log("In the controller 2 Hello World");
+  //console.log(JSON.stringify($window.WP));
+  console.log(JSON.stringify(WP));
+  //console.log(JSON.stringify($stateProvider));
+  $scope.getZones = function (zone) {
+    $http.get("/backend/api/dns",  config)
+    .then(function(response) {
+            if (response.data['status'] === "Success"){
+              $scope.records = response.data['results'];
+            }
+            else{
+              $scope.records = [] 
+            }
+        });
+  };
+  $scope.getZones()
+});
+
+dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
+  var todoList = this;
+  var config = {
+    params: { 'username' : WP.user_login, zone: $stateParams.zoneId},
     headers : {'Content-Type' : 'application/json'}
    };
   console.log("In the controller 2 Hello World");
