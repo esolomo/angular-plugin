@@ -45,7 +45,7 @@ dnsApp.config( function( $stateProvider, WP ) {
       name: 'dns',
       url: '/index.php/api/dns',
       templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dns.html',
-      controller: 'TodoListController2'
+      controller: 'DNSCtrl'
   } );
 } );
 
@@ -100,35 +100,12 @@ dnsApp.controller('TodoListController', function($scope,  $window) {
 
 });
 
-dnsApp.controller('TodoListController2', function($scope) {
+dnsApp.controller('DNSCtrl', function($scope) {
   var todoList = this;
   console.log("In the controller 2 Hello World");
   //console.log(JSON.stringify($window.WP));
   console.log(JSON.stringify(WP));
   //console.log(JSON.stringify($stateProvider));
-  todoList.todos = [
-    {text:'learn AngularJS', done:true},
-    {text:'build an AngularJS app', done:false}];
-
-  todoList.addTodo = function() {
-    todoList.todos.push({text:todoList.todoText, done:false});
-    todoList.todoText = '';
-  };
-
-  todoList.remaining = function() {
-    var count = 0;
-    angular.forEach(todoList.todos, function(todo) {
-      count += todo.done ? 0 : 1;
-    });
-    return count;
-  };
-
-  todoList.archive = function() {
-    var oldTodos = todoList.todos;
-    todoList.todos = [];
-    angular.forEach(oldTodos, function(todo) {
-      if (!todo.done) todoList.todos.push(todo);
-    });
-  };
+  
 
 });
