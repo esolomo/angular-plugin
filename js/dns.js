@@ -106,6 +106,16 @@ dnsApp.controller('DNSCtrl', function($scope) {
   //console.log(JSON.stringify($window.WP));
   console.log(JSON.stringify(WP));
   //console.log(JSON.stringify($stateProvider));
-  
+  $scope.getZones = function (zone) {
+    $http.get("/backend/api/dns",  config)
+    .then(function(response) {
+            if (response.data['status'] === "Success"){
+              $scope.records = response.data['results'];
+            }
+            else{
+              $scope.records = [] 
+            }
+        });
+  };
 
 });
