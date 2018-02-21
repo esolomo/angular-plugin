@@ -18,6 +18,7 @@ ini_set( 'display_errors', 1 );
 		          user_name: "<?php echo $user_name; ?>"	     	
 	  }
     </script> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" async>
     <link rel="stylesheet" href="http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/css/todo.css"></link>
   </head>
   <body>
@@ -32,7 +33,7 @@ ini_set( 'display_errors', 1 );
         </ul><!--// end .navbar-nav -->
       </nav>
       <div class="container">
-        <ui-view />
+        <ui-view/>
       </div>   
   </body>
 </html>
