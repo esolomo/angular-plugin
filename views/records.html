@@ -24,7 +24,7 @@
     </ul>
           <div class="tab-content ">
             <div class="tab-pane  active" id="primary">
-                <table  class="table table-bordered table-hover table-condensed">
+                <table  class="table  table-hover ">
                     <tr   >
                       <td style="width:45%" >
                           <span class="pull-left" e-name="name" e-form="rowform" e-required>
@@ -36,7 +36,7 @@
                   <button ng-click="applyZoneConfig(main_zone)"  class="pull-right btn btn-primary">create zone configuration</button> 
             </div>
             <div class="tab-pane  fade" id="managed">
-                <table ng-hide="(managed_zones.length == 0) ? true : false" class="table table-bordered table-hover table-condensed">
+                <table ng-hide="(managed_zones.length == 0) ? true : false" class="table  table-hover ">
                     <tr  ng-repeat="zone in managed_zones" >
                       <td style="width:45%" >
                           <span class="pull-left" e-name="name" e-form="rowform" e-required>
@@ -55,7 +55,7 @@
                   <br></br> 
             </div>
             <div class="tab-pane  fade" id="ttl">
-                <table class="table table-bordered table-hover table-condensed">
+                <table class="table  table-hover ">
                     <tr class="editable-row ng-scope">
                       <td style="width:45%" >
                           <a   href="#"  editable-text="ttl.base" onbeforesave="storeTTL(ttl.base)" onaftersave="updateTTL(ttl.base)" >
@@ -66,7 +66,7 @@
                   </table>
             </div>
             <div class="tab-pane  fade" id="soa">
-                <table class="table table-bordered table-hover table-condensed">
+                <table class="table  table-hover ">
                     <tr ng-repeat="entry in soa" >
                       <td style="width:45%" >
                           <span class="pull-left" e-name="name" e-form="rowform" e-required>
@@ -88,7 +88,7 @@
                   </table>
             </div>
             <div class="tab-pane  fade" id="ipv4">
-                <table ng-hide="(root_ipv4.length == 0) ? true : false" class="table table-bordered table-hover table-condensed">
+                <table ng-hide="(root_ipv4.length == 0) ? true : false" class="table  table-hover ">
                     <tr ng-repeat="root in root_ipv4" >
                       <td style="width:45%" >
                           <span class="pull-left" e-name="name" e-form="rowform" e-required>
@@ -106,7 +106,7 @@
                   <button  ng-hide="(root_ipv4.length == 0) ? false : true" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_IPv4.html')"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button> 
             </div>
             <div class="tab-pane  fade" id="ipv6">
-                <table ng-hide="(root_ipv6.length == 0) ? true : false" class="table table-bordered table-hover table-condensed">
+                <table ng-hide="(root_ipv6.length == 0) ? true : false" class="table  table-hover ">
                     <tr ng-repeat="root in root_ipv6" >
                       <td style="width:45%" >
                           <span class="pull-left" e-name="name" e-form="rowform" e-required>
@@ -124,7 +124,7 @@
                   <button  ng-hide="(root_ipv6.length == 0) ? false : true" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_IPv6.html')"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>      
             </div>
             <div class="tab-pane  fade" id="a">
-                <table ng-hide="(zone_a.length == 0) ? true : false" class="table table-bordered table-hover table-condensed">
+                <table ng-hide="(zone_a.length == 0) ? true : false" class="table  table-hover ">
                     <tr>
                       <td style="width:45%;" > <span class="pull-left"> host record </span></td>
                       <td style="width:45%" >points to</td>
@@ -158,7 +158,7 @@
                   <button  ng-hide="(zone_a.length == 0) ? false : true" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_A.html')"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>      
             </div>
             <div class="tab-pane  fade" id="aaaa">
-                <table ng-hide="(zone_aaaa.length == 0) ? true : false" class="table table-bordered table-hover table-condensed">
+                <table ng-hide="(zone_aaaa.length == 0) ? true : false" class="table  table-hover ">
                     <tr>
                       <td style="width:45%" ><span class="pull-left"> host record </span></td>
                       <td style="width:45%" >points to</td>
@@ -192,7 +192,7 @@
                   <button  ng-hide="(zone_aaaa.length == 0) ? false : true" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_AAAA.html')"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>      
             </div>
             <div class="tab-pane  fade" id="cname">
-                <table ng-hide="(zone_cname.length == 0) ? true : false" class="table table-bordered table-hover table-condensed">
+                <table ng-hide="(zone_cname.length == 0) ? true : false" class="table  table-hover ">
                     <tr>
                       <td style="width:45%" ><span class="pull-left"> host record </span></td>
                       <td style="width:45%" >points to</td>
@@ -226,7 +226,7 @@
                   <button  ng-hide="(zone_cname.length == 0) ? false : true" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_CNAME.html')"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>      
             </div>
             <div class="tab-pane  fade" id="mx">
-                <table ng-hide="(zone_mx.length == 0) ? true : false" class="table table-bordered table-hover table-condensed">
+                <table ng-hide="(zone_mx.length == 0) ? true : false" class="table  table-hover ">
                     <tr>
                       <td style="width:40%" ><span class="pull-left"> host record </span></td>
                       <td style="width:40%" >points to</td>
@@ -260,7 +260,7 @@
                   <button  ng-hide="(zone_mx.length == 0) ? false : true" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_MX.html')"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>      
             </div>
             <div class="tab-pane  fade" id="txt">
-                <table ng-hide="(zone_txt.length == 0) ? true : false" class="table table-bordered table-hover table-condensed">
+                <table ng-hide="(zone_txt.length == 0) ? true : false" class="table  table-hover ">
                     <tr>
                       <td style="width:40%" >host records</td>
                       <td style="width:40%" ><span class="pull-left"> txt value </span></td>
@@ -295,7 +295,7 @@
             
             </div>
             <div class="tab-pane  fade" id="srv">
-                <table ng-hide="(zone_srv.length == 0) ? true : false" class="table table-bordered table-hover table-condensed">
+                <table ng-hide="(zone_srv.length == 0) ? true : false" class="table  table-hover ">
                     <tr>
                       <td style="width:20%" ><span class="pull-left">target</span></td>
                       <td style="width:10%" > port</td>
@@ -347,7 +347,7 @@
                   <button  ng-hide="(zone_srv.length == 0) ? false : true" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_SRV.html')"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>          
             </div>
             <div class="tab-pane  fade" id="spf">
-                <table ng-hide="(zone_spf.length == 0) ? true : false" class="table table-bordered table-hover table-condensed">
+                <table ng-hide="(zone_spf.length == 0) ? true : false" class="table  table-hover ">
                     <tr>
                       <td style="width:40%" >host records</td>
                       <td style="width:40%" ><span class="pull-left"> txt value </span></td>
