@@ -100,7 +100,7 @@ dnsApp.controller('TodoListController', function($scope,  $window) {
 
 });
 
-dnsApp.controller('DNSCtrl', function($scope) {
+dnsApp.controller('DNSCtrl', function($scope, $http) {
   var todoList = this;
   var config = {
     params: { 'username' : WP.user_login},
