@@ -21,7 +21,7 @@ dnsApp.config( function( $urlRouterProvider, $locationProvider ) {
 } );
 
 // Boot
-madnsAppinApp.run( function( $rootScope, _ ) {
+dnsApp.run( function( $rootScope, _ ) {
 
 	// Log routing errors
 	$rootScope.$on( "$stateChangeError", console.error.bind( console, '$stateChangeError' ) );
