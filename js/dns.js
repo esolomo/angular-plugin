@@ -10,7 +10,7 @@ var dnsApp =  angular.module('dnsApp', [
 
 // Third-party support
 dnsApp.constant( '_', window._ );
-dnsApp.constant( 'WP', window.WP );
+dnsApp.constant( 'WP', $window.WP );
 
 // Routing
 dnsApp.config( function( $urlRouterProvider, $locationProvider ) {
@@ -33,8 +33,7 @@ dnsApp.config( function( $stateProvider, WP ) {
   $stateProvider.state( {
       name: 'dns',
       url: '/dns',
-      templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dns.html',
-      //templateUrl: WP.plugin_url + '/views/dashboard.html',
+      templateUrl: WP.plugin_url + '/views/dashboard.html',
       controller: 'TodoListController'
   } );
 } );
@@ -44,8 +43,7 @@ dnsApp.config( function( $stateProvider, WP ) {
   $stateProvider.state( {
       name: 'dnsi',
       url: '/index.php/api/dns',
-      templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dns.html',
-      //templateUrl: WP.plugin_url + '/views/dashboard.html',
+      templateUrl: WP.plugin_url + '/views/dashboard.html',
       controller: 'TodoListController2'
   } );
 } );
@@ -55,8 +53,7 @@ dnsApp.config( function( $stateProvider, WP ) {
   $stateProvider.state( {
       name: 'dnsapi',
       url: '/api/dns',
-      templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dns.html',
-      //templateUrl: WP.plugin_url + '/views/dashboard.html',
+      templateUrl: WP.plugin_url + '/views/dashboard.html',
       controller: 'TodoListController'
   } );
 } );
@@ -66,8 +63,7 @@ dnsApp.config( function( $stateProvider, WP ) {
   $stateProvider.state( {
       name: 'dns2',
       url: '/',
-      templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dns.html',
-      //templateUrl: WP.plugin_url + '/views/dashboard.html',
+      templateUrl: WP.plugin_url + '/views/dashboard.html',
       controller: 'TodoListController'
   } );
 } );
@@ -103,7 +99,7 @@ dnsApp.controller('TodoListController', function($scope,  WP) {
 
 });
 
-dnsApp.controller('TodoListController2', function($scope,  WP) {
+dnsApp.controller('TodoListController2', function($scope, WP) {
   var todoList = this;
   console.log("In the controller 2 Hello World");
   console.log(JSON.stringify(WP));

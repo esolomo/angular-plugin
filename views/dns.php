@@ -29,11 +29,11 @@ ini_set( 'display_errors', 1 );
         <ui-view/>
       </div>
       <script>	
-    window.WP = {
+      window.WP = {
     	      	plugin_url: "<?php echo $plugin_url; ?>",
 		          user_login: "<?php echo $user_login; ?>",
 		          user_name: "<?php echo $user_name; ?>"	     	
-	  }
+	    }
     </script>   
   </body>
 </html>
