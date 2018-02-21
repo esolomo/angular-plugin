@@ -140,10 +140,9 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
     params: { 'username' : WP.user_login, zone: $stateParams.zoneId},
     headers : {'Content-Type' : 'application/json'}
    };
-  console.log("In the controller 2 Hello World");
-  //console.log(JSON.stringify($window.WP));
+   $scope.zone = $stateParams.zoneId;
+  console.log("Records Controller");
   console.log(JSON.stringify(WP));
-  //console.log(JSON.stringify($stateProvider));
   $scope.getZones = function (zone) {
     $http.get("/backend/api/dns",  config)
     .then(function(response) {
@@ -153,7 +152,9 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
             else{
               $scope.records = [] 
             }
+            console.log(JSON.stringify($scope.records));
         });
   };
+
   $scope.getZones()
 });
