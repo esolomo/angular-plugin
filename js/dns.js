@@ -1,6 +1,6 @@
 
 // App module
-var dnsApp = angular.module('dnsApp', [
+angular.module('dnsApp', [
 	'ng',
 	'ngResource',
 	'ngSanitize',
