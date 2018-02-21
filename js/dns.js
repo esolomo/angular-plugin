@@ -42,7 +42,7 @@ dnsApp.config( function( $stateProvider, WP ) {
 // Route
 dnsApp.config( function( $stateProvider, WP ) {
   $stateProvider.state( {
-      name: 'dns',
+      name: 'dns3',
       url: '/api/dns',
       templateUrl: '/var/www/wordpress/wp-content/plugins/betterdevops/views/dns.html',
       //templateUrl: WP.plugin_url + '/views/dashboard.html',
