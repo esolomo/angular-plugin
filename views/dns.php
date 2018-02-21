@@ -21,6 +21,16 @@ ini_set( 'display_errors', 1 );
     <link rel="stylesheet" href="http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/css/todo.css"></link>
   </head>
   <body>
+        <nav class="navbar navbar-inverse navbar-toggleable-md bg-inverse" role="navigation">
+        <a class="navbar-brand mr-auto" ui-sref="home">
+          <img src="https://angularjs.org/img/angularjs-for-header-only.svg" height="40" alt="Angular.js">
+        </a>
+
+        <ul class="nav navbar-nav my-2">
+          <li class="nav-item" ui-sref-active="active"><a class="nav-link" ui-sref="home">Home</a></li>
+              <li class="nav-item" ui-sref-active="active"><a class="nav-link" ui-sref="weather">Weather</a></li>
+        </ul><!--// end .navbar-nav -->
+      </nav>
       <div class="container">
         <ui-view />
       </div>   
