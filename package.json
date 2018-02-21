@@ -1,0 +1,26 @@
+{
+	"name": "wordpress-angular-plugin",
+	"version": "0.0.1",
+	"description": "Build process for Angular.js and Bootstrap LESS",
+	"main": "build.js",
+	"repository": "https://github.com/Kevinlearynet/wordpress-angular-plugin",
+	"scripts": {
+		"build-latest": "git pull; npm update; gulp build;"
+	},
+	"author": "kevinleary.net",
+	"license": "ISC",
+	"devDependencies": {
+		"gulp": "^3.9.1",
+		"gulp-autoprefixer": "^3.1.1",
+		"gulp-clean-css": "^3.0.4",
+		"gulp-fs-cache": "^0.1.0",
+		"gulp-include": "^2.3.1",
+		"gulp-less": "^3.3.0",
+		"gulp-ng-annotate": "^2.0.0",
+		"gulp-rename": "^1.2.2",
+		"gulp-sourcemaps": "^2.5.1",
+		"gulp-uglify": "^2.1.2",
+		"gulp-util": "^3.0.8",
+		"pump": "^1.0.2"
+	}
+}

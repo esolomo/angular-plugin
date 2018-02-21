@@ -1,0 +1,36 @@
+<div  class="add-row-editable-table" style="padding-bottom:20px;">
+  <button class="btn btn-primary" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZone.html')">Add Zone </button>
+</div>
+
+<div >
+  <table  class="table table-bordered table-hover table-condensed">
+    <tr>
+      <td  style="text-align:left;">Owner</td>
+      <td  style="text-align:left;">Main Domain</td>
+      <td>Actions</td>
+    </tr>
+    <tr ng-repeat="record in records" class="editable-row">
+      <td>
+	<span style="float:left" e-name="name" e-form="rowform" e-required>
+          {{ record.customer || 'Unknown' }}
+	</span>
+      </td>
+      <td>
+	<span style="float:left" e-name="name" e-form="rowform" e-required>
+          {{ record.zone || 'empty' }}
+	</span>
+      </td>
+      <td style="width:20%;">
+	<div class="buttons" >
+          <button class="btn btn-primary editable-table-button btn-xs" ui-sref="main.dns.details({zoneId: record.zone})" >View</button>
+          <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeZone(record.zone)">Delete</button>
+	</div>
+      </td>
+    </tr>
+  </table>
+  <br></br>
+  <button ng-click="deployDNSConfig()"  class="btn btn-primary" style="position: absolute; right: 0;">Deploy</button> 
+</div>
+
+
+  
