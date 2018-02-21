@@ -15,7 +15,7 @@ dnsApp.constant( 'WP', window.WP );
 // Routing
 dnsApp.config( function( $urlRouterProvider, $locationProvider ) {
     $locationProvider.html5Mode( { enabled: true, requireBase: false } );
-    $urlRouterProvider.otherwise( '/dns4' );
+    $urlRouterProvider.otherwise( '/dns' );
 } );
 
 // Boot
@@ -42,7 +42,7 @@ dnsApp.config( function( $stateProvider, WP ) {
 // Route
 dnsApp.config( function( $stateProvider, WP ) {
   $stateProvider.state( {
-      name: 'dns3',
+      name: 'dnsapi',
       url: '/api/dns',
       templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dns.html',
       //templateUrl: WP.plugin_url + '/views/dashboard.html',
@@ -61,9 +61,10 @@ dnsApp.config( function( $stateProvider, WP ) {
   } );
 } );
 
-dnsApp.controller('TodoListController', function() {
+dnsApp.controller('TodoListController', function($scope, $stateProvider, WP) {
   var todoList = this;
   console.log("In the controller");
+  console.log(JSON.stringify($stateProvider));
   todoList.todos = [
     {text:'learn AngularJS', done:true},
     {text:'build an AngularJS app', done:false}];
