@@ -15,7 +15,7 @@ ini_set( 'display_errors', 1 );
     window.WP = {
     	      	plugin_url: "<?php echo $plugin_url; ?>",
 		          user_login: "<?php echo $user_login; ?>",
-		        user_name: "<?php echo $user_name; ?>"	     	
+		          user_name: "<?php echo $user_name; ?>"	     	
 	  }
     </script> 
     <link rel="stylesheet" href="http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/css/todo.css"></link>

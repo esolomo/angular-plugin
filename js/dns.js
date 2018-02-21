@@ -31,16 +31,17 @@ dnsApp.run( function( $rootScope, _ ) {
 // Route
 dnsApp.config( function( $stateProvider, WP ) {
     $stateProvider.state( {
-        name: 'dashboard',
-        url: '/dashboard',
-        templateUrl: '/var/www/wordpress/wp-content/plugins/betterdevops/views/dashboard.html',
+        name: 'dns',
+        url: '/dns',
+        templateUrl: '/var/www/wordpress/wp-content/plugins/betterdevops/views/dns.html',
         //templateUrl: WP.plugin_url + '/views/dashboard.html',
-        controller: 'homeCtrl'
+        controller: 'TodoListController'
     } );
 } );
 
 dnsApp.controller('TodoListController', function() {
   var todoList = this;
+  console.log("In the controller")
   todoList.todos = [
     {text:'learn AngularJS', done:true},
     {text:'build an AngularJS app', done:false}];
