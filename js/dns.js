@@ -10,7 +10,7 @@ var dnsApp =  angular.module('dnsApp', [
 
 // Third-party support
 dnsApp.constant( '_', window._ );
-//dnsApp.constant( 'WP', $window.WP );
+dnsApp.constant( 'WP', window.WP );
 
 // Routing
 dnsApp.config( function( $urlRouterProvider, $locationProvider ) {
@@ -29,41 +29,42 @@ dnsApp.run( function( $rootScope, _ ) {
 } );
 
 // Route
-dnsApp.config( function( $stateProvider, $window ) {
+dnsApp.config( function( $stateProvider, WP ) {
   $stateProvider.state( {
-      name: 'dns',
-      url: '/dns',
-      templateUrl: $window.WP.plugin_url + '/views/dashboard.html',
+      name: 'dashboard',
+      url: '/index.php/api/dashboard',
+      templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dashboard.html',
+      //templateUrl: WP.plugin_url + '/views/dashboard.html',
       controller: 'TodoListController'
   } );
 } );
 
 // Route
-dnsApp.config( function( $stateProvider, $window ) {
+dnsApp.config( function( $stateProvider, WP ) {
   $stateProvider.state( {
-      name: 'dnsi',
+      name: 'dns',
       url: '/index.php/api/dns',
-      templateUrl: $window.WP.plugin_url + '/views/dashboard.html',
+      templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dns.html',
       controller: 'TodoListController2'
   } );
 } );
 
 // Route
-dnsApp.config( function( $stateProvider, $window ) {
+dnsApp.config( function( $stateProvider, WP ) {
   $stateProvider.state( {
       name: 'dnsapi',
       url: '/api/dns',
-      templateUrl: $window.WP.plugin_url + '/views/dashboard.html',
+      templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dns.html',
       controller: 'TodoListController'
   } );
 } );
 
 // Route
-dnsApp.config( function( $stateProvider, $window ) {
+dnsApp.config( function( $stateProvider, WP) {
   $stateProvider.state( {
       name: 'dns2',
       url: '/',
-      templateUrl: $window.WP.plugin_url + '/views/dashboard.html',
+      templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dns.html',
       controller: 'TodoListController'
   } );
 } );
