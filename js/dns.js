@@ -144,7 +144,7 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
   console.log("Records Controller");
   console.log(JSON.stringify(WP));
   $scope.getZoneDetails = function() {
-    $http.get("/api/dns",  { "params": { 'username' : WP.user_login, "zone": $stateParams.zoneId } })
+    $http.get("/backend/api/dns",  { "params": { 'username' : WP.user_login, "zone": $stateParams.zoneId } })
     .then(function(response) {
             $scope.zone = $stateParams.zoneId
             $scope.zone_data = response.data['results']
