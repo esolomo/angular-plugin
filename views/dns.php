@@ -5,8 +5,8 @@ ini_set( 'display_errors', 1 );
 <html ng-app="dnsApp">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="http://wordpress.betterdevops.co.uk/wp-content/plugins/wordpress-angularjs-plugin/js/dns.js"></script>
-    <link rel="stylesheet" href="http://wordpress.betterdevops.co.uk/wp-content/plugins/wordpress-angularjs-plugin/css/todo.css">
+    <script src="http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/js/dns.js"></script>
+    <link rel="stylesheet" href="http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/css/todo.css">
   </head>
   <body>
     <h2>DNS</h2>
