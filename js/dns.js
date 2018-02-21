@@ -1,8 +1,47 @@
 
 // App module
-var dnsApp =  angular.module('dnsApp', []
-)
-.controller('TodoListController', function() {
+var dnsApp =  angular.module('dnsApp', [
+	'ng',
+	'ngResource',
+	'ngSanitize',
+	'ui.router',
+	'ngAnimate'
+]
+);
+
+// Third-party support
+dnsApp.constant( '_', window._ );
+dnsApp.constant( 'WP', window.WP );
+
+
+// Routing
+dnsApp.config( function( $urlRouterProvider, $locationProvider ) {
+	$locationProvider.html5Mode( true );
+	$urlRouterProvider.otherwise( '/not-found/' );
+} );
+
+// Boot
+madnsAppinApp.run( function( $rootScope, _ ) {
+
+	// Log routing errors
+	$rootScope.$on( "$stateChangeError", console.error.bind( console, '$stateChangeError' ) );
+
+	// Global lodash
+	$rootScope._ = window._;
+} );
+
+// Route
+dnsApp.config( function( $stateProvider, WP ) {
+	$stateProvider.state( {
+		name: 'dashboard',
+		url: '/dashboard',
+		templateUrl: WP.plugin_url + '/views/dashboard.html',
+		controller: 'homeCtrl'
+	} );
+} );
+
+
+dnsApp.controller('TodoListController', function() {
     var todoList = this;
     todoList.todos = [
       {text:'learn AngularJS', done:true},
