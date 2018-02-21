@@ -61,10 +61,10 @@ dnsApp.config( function( $stateProvider, WP ) {
   } );
 } );
 
-dnsApp.controller('TodoListController', function($scope, $stateProvider, WP) {
+dnsApp.controller('TodoListController', function($scope,  WP) {
   var todoList = this;
   console.log("In the controller");
-  console.log(JSON.stringify($stateProvider));
+  //console.log(JSON.stringify($stateProvider));
   todoList.todos = [
     {text:'learn AngularJS', done:true},
     {text:'build an AngularJS app', done:false}];
