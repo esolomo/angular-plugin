@@ -33,7 +33,7 @@ dnsApp.config( function( $stateProvider, WP ) {
   $stateProvider.state( {
       name: 'dns',
       url: '/dns',
-      templateUrl: '/var/www/wordpress/wp-content/plugins/betterdevops/views/dns.html',
+      templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dns.html',
       //templateUrl: WP.plugin_url + '/views/dashboard.html',
       controller: 'TodoListController'
   } );
@@ -44,7 +44,7 @@ dnsApp.config( function( $stateProvider, WP ) {
   $stateProvider.state( {
       name: 'dns3',
       url: '/api/dns',
-      templateUrl: '/var/www/wordpress/wp-content/plugins/betterdevops/views/dns.html',
+      templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dns.html',
       //templateUrl: WP.plugin_url + '/views/dashboard.html',
       controller: 'TodoListController'
   } );
@@ -55,7 +55,7 @@ dnsApp.config( function( $stateProvider, WP ) {
   $stateProvider.state( {
       name: 'dns2',
       url: '/',
-      templateUrl: '/var/www/wordpress/wp-content/plugins/betterdevops/views/dns.html',
+      templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dns.html',
       //templateUrl: WP.plugin_url + '/views/dashboard.html',
       controller: 'TodoListController'
   } );
