@@ -42,6 +42,17 @@ dnsApp.config( function( $stateProvider, WP ) {
 // Route
 dnsApp.config( function( $stateProvider, WP ) {
   $stateProvider.state( {
+      name: 'dnsi',
+      url: '/index.php/api/dns',
+      templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dns.html',
+      //templateUrl: WP.plugin_url + '/views/dashboard.html',
+      controller: 'TodoListController'
+  } );
+} );
+
+// Route
+dnsApp.config( function( $stateProvider, WP ) {
+  $stateProvider.state( {
       name: 'dnsapi',
       url: '/api/dns',
       templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dns.html',
