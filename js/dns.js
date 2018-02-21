@@ -143,18 +143,30 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
    $scope.zone = $stateParams.zoneId;
   console.log("Records Controller");
   console.log(JSON.stringify(WP));
-  $scope.getZones = function (zone) {
-    $http.get("/backend/api/dns",  config)
+  $scope.getZoneDetails = function() {
+    $http.get("/api/dns",  { "params": { 'username' : WP.user_login, "zone": $stateParams.zoneId } })
     .then(function(response) {
-            if (response.data['status'] === "Success"){
-              $scope.records = response.data['results'];
-            }
-            else{
-              $scope.records = [] 
-            }
-            console.log(JSON.stringify($scope.records));
-        });
-  };
+            $scope.zone = $stateParams.zoneId
+            $scope.zone_data = response.data['results']
+            $scope.main_zone = response.data['results']['main_zone']
+            $scope.zone_a = response.data['results']['A']
+            $scope.zone_aaaa = response.data['results']['AAAA']
+            $scope.zone_cname = response.data['results']['CNAME']
+            $scope.zone_mx = response.data['results']['MX']
+            $scope.zone_txt = response.data['results']['TXT']
+            $scope.zone_srv = response.data['results']['SRV']
+            $scope.zone_spf = response.data['results']['SPF']
+            $scope.root_ipv4 = response.data['results']['ROOT_IPv4']
+            $scope.root_ipv6 = response.data['results']['ROOT_IPv6']
+            $scope.soa = response.data['results']['SOA']
+            $scope.ns = response.data['results']['NS']
+            $scope.ttl = response.data['results']['TTL']
+            $scope.managed_zones = response.data['results']['managed_zones']
+            console.log("Zone : " + $scope.zone )
+            console.log("SRV length : " + $scope.zone_srv.length )
+            console.log("SPF length : " + $scope.zone_spf.length )
+        });    
+      };
 
-  $scope.getZones()
+  $scope.getZoneDetails();
 });
