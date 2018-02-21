@@ -75,7 +75,7 @@ dnsApp.config( function( $stateProvider, WP ) {
 dnsApp.controller('TodoListController', function($scope,  WP) {
   var todoList = this;
   console.log("In the controller");
-  //console.log(JSON.stringify($stateProvider));
+  console.log(WP.user_login);
   todoList.todos = [
     {text:'learn AngularJS', done:true},
     {text:'build an AngularJS app', done:false}];
@@ -106,6 +106,7 @@ dnsApp.controller('TodoListController', function($scope,  WP) {
 dnsApp.controller('TodoListController2', function($scope,  WP) {
   var todoList = this;
   console.log("In the controller 2 Hello World");
+  console.log(WP.user_login);
   //console.log(JSON.stringify($stateProvider));
   todoList.todos = [
     {text:'learn AngularJS', done:true},
