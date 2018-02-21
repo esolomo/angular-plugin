@@ -33,8 +33,8 @@ dnsApp.config( function( $stateProvider, WP ) {
   $stateProvider.state( {
       name: 'dashboard',
       url: '/index.php/api/dashboard',
-      templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dashboard.html',
-      //templateUrl: WP.plugin_url + '/views/dashboard.html',
+      //templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dashboard.html',
+      templateUrl: WP.plugin_url + '/views/dashboard.html',
       controller: 'TodoListController'
   } );
 } );
