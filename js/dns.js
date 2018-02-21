@@ -102,6 +102,10 @@ dnsApp.controller('TodoListController', function($scope,  $window) {
 
 dnsApp.controller('DNSCtrl', function($scope) {
   var todoList = this;
+  var config = {
+    params: { 'username' : WP.user_login},
+    headers : {'Content-Type' : 'application/json'}
+   };
   console.log("In the controller 2 Hello World");
   //console.log(JSON.stringify($window.WP));
   console.log(JSON.stringify(WP));
@@ -117,5 +121,5 @@ dnsApp.controller('DNSCtrl', function($scope) {
             }
         });
   };
-
+  $scope.getZones()
 });
