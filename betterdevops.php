@@ -200,6 +200,7 @@ class ngApp
 		error_log('Current Username : ');		
 		error_log($user_name);
 		$user_login = $current_user->user_email;
+		error_log('Current Email : ');
 		error_log($user_login);		
 		$base_href = $this->base_href;
 		$page_title = 'BetterDevOps DashBoard';
