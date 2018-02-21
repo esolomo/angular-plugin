@@ -11,13 +11,6 @@ ini_set( 'display_errors', 1 );
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular-animate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
     <script src="http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/js/dns.js"></script>
-    <script>	
-    window.WP = {
-    	      	plugin_url: "<?php echo $plugin_url; ?>",
-		          user_login: "<?php echo $user_login; ?>",
-		          user_name: "<?php echo $user_name; ?>"	     	
-	  }
-    </script> 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" async>
     <link rel="stylesheet" href="http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/css/todo.css"></link>
   </head>
@@ -34,7 +27,14 @@ ini_set( 'display_errors', 1 );
       </nav>
       <div class="container">
         <ui-view/>
-      </div>   
+      </div>
+      <script>	
+    window.WP = {
+    	      	plugin_url: "<?php echo $plugin_url; ?>",
+		          user_login: "<?php echo $user_login; ?>",
+		          user_name: "<?php echo $user_name; ?>"	     	
+	  }
+    </script>   
   </body>
 </html>
 
