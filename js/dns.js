@@ -15,7 +15,7 @@ dnsApp.constant( 'WP', window.WP );
 // Routing
 dnsApp.config( function( $urlRouterProvider, $locationProvider ) {
     $locationProvider.html5Mode( { enabled: true, requireBase: false } );
-    $urlRouterProvider.otherwise( '/not-found/' );
+    $urlRouterProvider.otherwise( '/dns' );
 } );
 
 // Boot
