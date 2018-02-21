@@ -30,18 +30,40 @@ dnsApp.run( function( $rootScope, _ ) {
 
 // Route
 dnsApp.config( function( $stateProvider, WP ) {
-    $stateProvider.state( {
-        name: 'dns',
-        url: '/dns',
-        templateUrl: '/var/www/wordpress/wp-content/plugins/betterdevops/views/dns.html',
-        //templateUrl: WP.plugin_url + '/views/dashboard.html',
-        controller: 'TodoListController'
-    } );
+  $stateProvider.state( {
+      name: 'dns',
+      url: '/dns',
+      templateUrl: '/var/www/wordpress/wp-content/plugins/betterdevops/views/dns.html',
+      //templateUrl: WP.plugin_url + '/views/dashboard.html',
+      controller: 'TodoListController'
+  } );
+} );
+
+// Route
+dnsApp.config( function( $stateProvider, WP ) {
+  $stateProvider.state( {
+      name: 'dns',
+      url: '/api/dns',
+      templateUrl: '/var/www/wordpress/wp-content/plugins/betterdevops/views/dns.html',
+      //templateUrl: WP.plugin_url + '/views/dashboard.html',
+      controller: 'TodoListController'
+  } );
+} );
+
+// Route
+dnsApp.config( function( $stateProvider, WP ) {
+  $stateProvider.state( {
+      name: 'dns',
+      url: '/',
+      templateUrl: '/var/www/wordpress/wp-content/plugins/betterdevops/views/dns.html',
+      //templateUrl: WP.plugin_url + '/views/dashboard.html',
+      controller: 'TodoListController'
+  } );
 } );
 
 dnsApp.controller('TodoListController', function() {
   var todoList = this;
-  console.log("In the controller")
+  console.log("In the controller");
   todoList.todos = [
     {text:'learn AngularJS', done:true},
     {text:'build an AngularJS app', done:false}];
