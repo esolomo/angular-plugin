@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: WordPress Angular Plugin Demo
- * Plugin URI: https://github.com/Kevinlearynet/wordpress-angular-plugin
- * Description: Demo of an Angular.js app setup inside of a WordPress plugin.
- * Author: Kevin Leary
+ * Plugin Name: WordPress BetterDevOps Plugin
+ * Plugin URI: https://github.com/esolomo/angular-plugin
+ * Description: BetterDevOps Plugin
+ * Author: Emmanuel Solomo
  * Version: 0.0.1
- * Author URI: 	http://www.kevinleary.net
+ * Author URI: 	http://www.betterdevops.co.uk
 */
 
 class ngApp
