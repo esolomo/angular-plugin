@@ -1,12 +1,7 @@
 
 // App module
-angular.module('dnsApp', [
-	'ng',
-	'ngResource',
-	'ngSanitize',
-	'ui.router',
-	'ngAnimate'
-]).controller('TodoListController', function() {
+angular.module('dnsApp', [])
+  .controller('TodoListController', function() {
     var todoList = this;
     todoList.todos = [
       {text:'learn AngularJS', done:true},
