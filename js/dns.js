@@ -137,17 +137,21 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
   $scope.addZone = function (zone) {
     $http.post("/backend/api/dns",  {"name":zone, 'username' : WP.user_login} ,{headers : {'Content-Type' : 'application/json'}})
     .then(function(response) {
-      //$('#AddZone').modal('hide');
-      $('#AddZone').modal('hide', function() {
-        $(':input', this).val('');
-      });
+      $('#AddZone').modal('hide');
       $scope.getZones();
     })
   };
 
+  $('#AddZone').on('hidden.bs.modal', function () {
+    console.log("Catch hiding event base");
+  });
+
   $(document.body).on('hidden.bs.modal', function () {
     //$('#AddZone').removeData('bs.modal');
-    console.log("Catch hiding event");
+    $('#AddZone').on('hidden', function() {
+      $(':input', this).val('');
+    });
+    console.log("Catch hiding event on window");
   });
 
   $scope.removeZone = function (zone) {
