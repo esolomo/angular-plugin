@@ -133,10 +133,10 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
   };
   $scope.getZones()
 
-  $scope.new_zone = "New Zone";
-  $scope.addZone = function () {
-    console.log($scope.new_zone)
-    $http.post("/backend/api/dns",  {"name":$scope.new_zone, 'username' : WP.user_login} ,{headers : {'Content-Type' : 'application/json'}})
+  $scope.new_zone = "";
+  $scope.addZone = function (zone) {
+    console.log(new_zone)
+    $http.post("/backend/api/dns",  {"name":zone, 'username' : WP.user_login} ,{headers : {'Content-Type' : 'application/json'}})
     .then(function(response) {
       $('#AddZone').modal('hide');
       $scope.getZones();
