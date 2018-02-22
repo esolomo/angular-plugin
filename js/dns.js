@@ -141,6 +141,10 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
     })
   };
 
+  $scope.$on('modal.hide',function(){
+    console.log("hide");
+    });
+    
   $scope.removeZone = function (zone) {
     $http.delete("/backend/api/dns",  {"params":{"zone":zone, 'username' : WP.user_login, "type":"full"}})
     .then(function(response) {
