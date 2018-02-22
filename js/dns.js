@@ -141,7 +141,13 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
       $scope.getZones();
     })
   };
-  
+
+  $scope.removeZone = function (zone) {
+    $http.delete("/backend/api/dns",  {"params":{"zone":zone, 'username' : WP.user_login, "type":"full"}})
+    .then(function(response) {
+            $scope.getZones()
+        });
+  };
 
 });
 
