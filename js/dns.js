@@ -151,18 +151,7 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
     $('input[name=AddZone]').val("")
   });
 
-  var i = 0;
-  
-  $scope.makeProgress = function (){
-    if(i < 100){
-      i = i + 1;
-      $(".progress-bar").css("width", i + "%").text(i + " %");
-    }
-    // Wait for sometime before running this script again
-    //setTimeout("makeProgress", 100);
-  }
 
-  $scope.makeProgress();
 });
 
 dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
