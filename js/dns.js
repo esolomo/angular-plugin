@@ -132,6 +132,15 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
         });
   };
   $scope.getZones()
+
+  $scope.addZone = function (zone) {
+    $http.post("/backend/api/dns",  {"name":zone, 'username' : WP.user_login} ,{headers : {'Content-Type' : 'application/json'}})
+    .then(function(response) {
+      $scope.getZones();
+    })
+  };
+  
+
 });
 
 dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
@@ -168,6 +177,6 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
             console.log("SPF length : " + $scope.zone_spf.length )
         });    
       };
-      
+
   $scope.getZoneDetails();
 });
