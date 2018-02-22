@@ -68,6 +68,19 @@
   </div>
 </div>
 
-<script>
-  console.log("Inside Modal");
+<script type="text/javascript">
+      $("#AddZone").on('hidden.bs.modal', function () {
+                console.log("Hide1")
+                alert('The modal is now hidden.');
+      });
+      $("#AddZone").on('hidden.bs.modal', function () {
+                console.log("Hide2")
+                alert('The modal is now hidden.');
+      });
+      $(function(){  
+        $('#AddZone').on('hidden.bs.modal', function (e) {
+        console.log("Modal hidden");
+          $("#placeholder-div1").html("");
+        });
+      });
 </script>
