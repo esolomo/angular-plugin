@@ -159,7 +159,7 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
       $(".progress-bar").css("width", i + "%").text(i + " %");
     }
     // Wait for sometime before running this script again
-    setTimeout("$scope.makeProgress", 100);
+    setTimeout("makeProgress", 100);
   }
 
   $scope.makeProgress();
