@@ -142,15 +142,7 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
     })
   };
 
-  $('#AddZone').on('hidden.bs.modal', function () {
-    console.log("Catch hiding event base");
-  });
-
   $(document.body).on('hidden.bs.modal', function () {
-    //$('#AddZone').removeData('bs.modal');
-    $('#AddZone').on('hidden', function() {
-      $(':input', this).val('');
-    });
     console.log("Catch hiding event on window");
     $('input[name=AddZone]').val("")
   });
