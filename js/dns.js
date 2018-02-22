@@ -152,17 +152,17 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
   });
 
   var i = 0;
-
+  
   $scope.makeProgress = function (){
     if(i < 100){
       i = i + 1;
       $(".progress-bar").css("width", i + "%").text(i + " %");
     }
     // Wait for sometime before running this script again
-    setTimeout(this, 100);
+    setTimeout("makeProgress()", 100);
   }
 
-  makeProgress();
+  $scope.makeProgress();
 });
 
 dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
