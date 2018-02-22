@@ -1,0 +1,55 @@
+<div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+          <button type="button" class="close"  data-dismiss="modal" ng-click="$dismiss()">
+                 <span aria-hidden="true">&times;</span>
+                 <span class="sr-only">Close</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">
+              Add SPF Record
+          </h4>
+      </div>
+      
+      <!-- Modal Body -->
+      <div class="modal-body">
+          
+          <form role="form">
+           <div  class="form-group">
+              <label for="exampleInputFTPSite1">zone </label> <input type="text" class="form-control" ng-model="zone"  placeholder="{{zone}}"/>
+            </div>
+
+            <div class="form-group"  >
+                  <label >target </label> <input type="text" class="form-control" ng-model="target"  placeholder="target"/>
+            </div>
+
+            <div class="form-group"  >
+                  <label >port </label> <input type="text" class="form-control" ng-model="port"  placeholder="port"/>
+            </div>
+            <div class="form-group"  >
+                  <label >weight </label> <input type="text" class="form-control" ng-model="weight"  placeholder="weight"/>
+            </div>
+            <div class="form-group"  >
+                  <label >priority </label> <input type="text" class="form-control" ng-model="priority"  placeholder="priority"/>
+            </div>
+            <div class="form-group"  >
+                  <label >ttl </label> <input type="text" class="form-control" ng-model="ttl"  placeholder="ttl"/>
+            </div>
+            <div class="form-group"  >
+                  <label >protocol </label> <input type="text" class="form-control" ng-model="protocol"  placeholder="protocol"/>
+            </div>
+
+            <button  type="submit" class="btn btn-default" ng-click="addRecord('SRV',zone,null,null,ttl,target,port,weight,priority,protocol)" >Submit</button>                            
+          </form>
+          
+          
+      </div>
+      
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="$dismiss()"> Close </button>
+      </div>
+  </div>
+
+
+
+</div>

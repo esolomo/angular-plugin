@@ -143,6 +143,7 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
    $scope.zone = $stateParams.zoneId;
   console.log("Records Controller");
   console.log(JSON.stringify(WP));
+  $scope.plugin_url = WP.plugin_url;
   $scope.getZoneDetails = function() {
     $http.get("/backend/api/dns",  { "params": { 'username' : WP.user_login, "zone": $stateParams.zoneId } })
     .then(function(response) {
@@ -167,6 +168,6 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
             console.log("SPF length : " + $scope.zone_spf.length )
         });    
       };
-
+      
   $scope.getZoneDetails();
 });
