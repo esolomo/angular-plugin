@@ -117,9 +117,7 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
     headers : {'Content-Type' : 'application/json'}
    };
   console.log("In the controller 2 Hello World");
-  //console.log(JSON.stringify($window.WP));
   console.log(JSON.stringify(WP));
-  //console.log(JSON.stringify($stateProvider));
   $scope.getZones = function (zone) {
     $http.get("/backend/api/dns",  config)
     .then(function(response) {
@@ -142,17 +140,17 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
     })
   };
 
-  $(document.body).on('hidden.bs.modal', function () {
-    console.log("Catch hiding event on window");
-    $('input[name=AddZone]').val("")
-  });
-
   $scope.removeZone = function (zone) {
     $http.delete("/backend/api/dns",  {"params":{"zone":zone, 'username' : WP.user_login, "type":"full"}})
     .then(function(response) {
             $scope.getZones()
         });
   };
+
+  $(document.body).on('hidden.bs.modal', function () {
+    console.log("Catch hiding event on window");
+    $('input[name=AddZone]').val("")
+  });
 
 });
 
