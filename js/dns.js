@@ -136,11 +136,14 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
   $scope.addZone = function (zone) {
     $http.post("/backend/api/dns",  {"name":zone, 'username' : WP.user_login} ,{headers : {'Content-Type' : 'application/json'}})
     .then(function(response) {
-      $('#AddZone').modal('dispose');
-      zone = '';
+      $('#AddZone').modal('hide');
       $scope.getZones();
     })
   };
+
+  $('#AddZone').on('hidden.bs.modal', function (e) {
+    console.log("Modal hidden")
+  })
 
   $scope.removeZone = function (zone) {
     $http.delete("/backend/api/dns",  {"params":{"zone":zone, 'username' : WP.user_login, "type":"full"}})
