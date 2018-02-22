@@ -152,6 +152,7 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
       $(':input', this).val('');
     });
     console.log("Catch hiding event on window");
+    $('input[name=AddZone]').val("")
   });
 
   $scope.removeZone = function (zone) {
