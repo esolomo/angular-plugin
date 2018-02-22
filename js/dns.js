@@ -116,7 +116,6 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
     params: { 'username' : WP.user_login},
     headers : {'Content-Type' : 'application/json'}
    };
-  console.log("In the controller 2 Hello World");
   console.log(JSON.stringify(WP));
   $scope.getZones = function (zone) {
     $http.get("/backend/api/dns",  config)
