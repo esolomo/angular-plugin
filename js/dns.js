@@ -136,9 +136,9 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
   $scope.addZone = function (zone) {
     $http.post("/backend/api/dns",  {"name":zone, 'username' : WP.user_login} ,{headers : {'Content-Type' : 'application/json'}})
     .then(function(response) {
-      $('#AddZone').modal('dismiss');
+      $('#AddZone').modal('hide');
+      zone = '';
       $scope.getZones();
-
     })
   };
   
