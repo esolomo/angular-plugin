@@ -144,12 +144,12 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
 
   $(document.body).on('hidden.bs.modal', function () {
     $('#AddZone').removeData('bs.modal');
-    console.log("Removed ffff");
+    console.log("Removed ffff 1 ");
   });
   $(document).ready(function() {
     $('.modal').on('hidden.bs.modal', function(){
       $('#AddZone').removeData('bs.modal');
-      console.log("Removed ffff");
+      console.log("Removed ffff 2");
      });
 });
 
