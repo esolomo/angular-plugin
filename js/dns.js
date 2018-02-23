@@ -280,7 +280,9 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
     $('input[name=srv_protocol]').val(""); 
     $('input[name=txt_name]').val(""); 
     $('input[name=txt_entry]').val(""); 
-
+    $('input[name=cname_name]').val("")
+    $('input[name=cname_value]').val("")
+    $('input[name=cname_ttl]').val("")
   });
 
 });
