@@ -269,7 +269,7 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
                 params['type'] = type
               }
               console.log(data)
-              $http.delete("/api/api/dns", {"params":params})
+              $http.delete("/backend/api/dns", {"params":params})
               .then(function(response) {
                   //console.log("Updating zone after removing entry" + data['name'] )
                   $scope.getZoneDetails($scope.servername)
