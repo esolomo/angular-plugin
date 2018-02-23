@@ -204,6 +204,7 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
 
         $http.put("/backend/api/dns", data, { headers : {'Content-Type' : 'application/json'} })
         .then(function(response) {
+          $('#AddIPv4').modal('hide');
           $scope.getZoneDetails();
         });    
       };
@@ -239,13 +240,15 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
     
             $http.put("/backend/api/dns", data, { headers : {'Content-Type' : 'application/json'} })
             .then(function(response) {
+              $('#AddIPv4').modal('hide');
               $scope.getZoneDetails();
             });    
           };
         
   $(document.body).on('hidden.bs.modal', function () {
     console.log("RecordsCtrl Catch hiding event on window");
-    $('input[name=AddZone]').val("")
+    $('input[name=AddZone]').val("");
+    $('input[name=AddIPv4_IP_value]').val("");
   });
 
 });
