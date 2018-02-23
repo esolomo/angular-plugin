@@ -120,9 +120,9 @@
                     </tr>
                   </table>
                   <br></br>
-                  <button  ng-hide="(root_ipv6.length == 0) ? true : false" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_IPv6.html')"  class="pull-right btn btn-primary">Add Record</button>  
+                  <button  ng-hide="(root_ipv6.length == 0) ? true : false" data-toggle="modal" data-target="#AddIPv6"  class="pull-right btn btn-primary">Add Record</button>  
                   <br></br>
-                  <button  ng-hide="(root_ipv6.length == 0) ? false : true" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_IPv6.html')"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>      
+                  <button  ng-hide="(root_ipv6.length == 0) ? false : true" data-toggle="modal" data-target="#AddIPv6"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>      
             </div>
             <div class="tab-pane  fade" id="a">
                 <table ng-hide="(zone_a.length == 0) ? true : false" class="table  table-hover ">
@@ -154,9 +154,9 @@
                     </tr>
                   </table>
                   <br></br>
-                  <button  ng-hide="(zone_a.length == 0) ? true : false" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_A.html')"  class="pull-right btn btn-primary">Add Record</button>  
+                  <button  ng-hide="(zone_a.length == 0) ? true : false" data-toggle="modal" data-target="#Add_A"  class="pull-right btn btn-primary">Add Record</button>  
                   <br></br>
-                  <button  ng-hide="(zone_a.length == 0) ? false : true" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_A.html')"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>      
+                  <button  ng-hide="(zone_a.length == 0) ? false : true" data-toggle="modal" data-target="#Add_A"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>      
             </div>
             <div class="tab-pane  fade" id="aaaa">
                 <table ng-hide="(zone_aaaa.length == 0) ? true : false" class="table  table-hover ">
@@ -188,9 +188,9 @@
                     </tr>
                   </table>
                   <br></br>
-                  <button  ng-hide="(zone_aaaa.length == 0) ? true : false" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_AAAA.html')"  class="pull-right btn btn-primary">Add Record</button>  
+                  <button  ng-hide="(zone_aaaa.length == 0) ? true : false" data-toggle="modal" data-target="#AddAAAA"  class="pull-right btn btn-primary">Add Record</button>  
                   <br></br>
-                  <button  ng-hide="(zone_aaaa.length == 0) ? false : true" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_AAAA.html')"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>      
+                  <button  ng-hide="(zone_aaaa.length == 0) ? false : true" data-toggle="modal" data-target="#AddAAAA"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>      
             </div>
             <div class="tab-pane  fade" id="cname">
                 <table ng-hide="(zone_cname.length == 0) ? true : false" class="table  table-hover ">
@@ -222,9 +222,9 @@
                     </tr>
                   </table>
                   <br></br>
-                  <button  ng-hide="(zone_cname.length == 0) ? true : false" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_CNAME.html')"  class="pull-right btn btn-primary">Add Record</button>  
+                  <button  ng-hide="(zone_cname.length == 0) ? true : false" data-toggle="modal" data-target="#AddCNAME"  class="pull-right btn btn-primary">Add Record</button>  
                   <br></br>
-                  <button  ng-hide="(zone_cname.length == 0) ? false : true" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_CNAME.html')"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>      
+                  <button  ng-hide="(zone_cname.length == 0) ? false : true" data-toggle="modal" data-target="#AddCNAME"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>      
             </div>
             <div class="tab-pane  fade" id="mx">
                 <table ng-hide="(zone_mx.length == 0) ? true : false" class="table  table-hover ">
@@ -256,9 +256,9 @@
                     </tr>
                   </table>
                   <br></br>
-                  <button  ng-hide="(zone_mx.length == 0) ? true : false" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_MX.html')"  class="pull-right btn btn-primary">Add Record</button>  
+                  <button  ng-hide="(zone_mx.length == 0) ? true : false" data-toggle="modal" data-target="#AddMX"  class="pull-right btn btn-primary">Add Record</button>  
                   <br></br>
-                  <button  ng-hide="(zone_mx.length == 0) ? false : true" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_MX.html')"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>      
+                  <button  ng-hide="(zone_mx.length == 0) ? false : true" data-toggle="modal" data-target="#AddMX"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>      
             </div>
             <div class="tab-pane  fade" id="txt">
                 <table ng-hide="(zone_txt.length == 0) ? true : false" class="table  table-hover ">
@@ -290,9 +290,9 @@
                     </tr>
                   </table>
                   <br></br>
-                  <button  ng-hide="(zone_txt.length == 0) ? true : false" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_TXT.html')"  class="pull-right btn btn-primary">Add Record</button>  
+                  <button  ng-hide="(zone_txt.length == 0) ? true : false" data-toggle="modal" data-target="#AddTXT"  class="pull-right btn btn-primary">Add Record</button>  
                   <br></br>
-                  <button  ng-hide="(zone_txt.length == 0) ? false : true" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_TXT.html')"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>  
+                  <button  ng-hide="(zone_txt.length == 0) ? false : true" data-toggle="modal" data-target="#AddTXT"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>  
             
             </div>
             <div class="tab-pane  fade" id="srv">
@@ -343,9 +343,9 @@
                     </tr>
                   </table>
                   <br></br>
-                  <button  ng-hide="(zone_srv.length == 0) ? true : false" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_SRV.html')"  class="pull-right btn btn-primary">Add Record</button>  
+                  <button  ng-hide="(zone_srv.length == 0) ? true : false" data-toggle="modal" data-target="#AddSRV"  class="pull-right btn btn-primary">Add Record</button>  
                   <br></br>
-                  <button  ng-hide="(zone_srv.length == 0) ? false : true" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_SRV.html')"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>          
+                  <button  ng-hide="(zone_srv.length == 0) ? false : true" data-toggle="modal" data-target="#AddSRV"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>          
             </div>
             <div class="tab-pane  fade" id="spf">
                 <table ng-hide="(zone_spf.length == 0) ? true : false" class="table  table-hover ">
@@ -377,9 +377,9 @@
                     </tr>
                   </table>
                   <br></br>
-                  <button  ng-hide="(zone_spf.length == 0) ? true : false" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_SPF.html')"  class="pull-right btn btn-primary">Add Record</button>  
+                  <button  ng-hide="(zone_spf.length == 0) ? true : false" data-toggle="modal" data-target="#AddTXT"  class="pull-right btn btn-primary">Add Record</button>  
                   <br></br>
-                  <button  ng-hide="(zone_spf.length == 0) ? false : true" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_SPF.html')"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>            
+                  <button  ng-hide="(zone_spf.length == 0) ? false : true" data-toggle="modal" data-target="#AddTXT"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button>            
             </div>
           </div>
       </div>
