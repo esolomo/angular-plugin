@@ -110,6 +110,7 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
   };
 
   $scope.removeZone = function (zone) {
+    console.log('In Removing zone');
     $http.delete("/backend/api/dns",  {"params":{"zone":zone, 'username' : WP.user_login, "type":"full"}})
     .then(function(response) {
             $scope.getZones()
@@ -269,6 +270,7 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
                 params = data
                 params['zone'] = $scope.zone
                 params['type'] = type
+                params['username'] = WP.user_login;
               }
               console.log(params);
               $http.delete("/backend/api/dns", {"params":params})
