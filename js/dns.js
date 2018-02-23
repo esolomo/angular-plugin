@@ -260,20 +260,20 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
               var params = {}
               params['username'] = WP.user_login;
               if (typeof data === 'string' || data instanceof String){
-                params['zone'] = $scope.servername
+                params['zone'] = $scope.zone
                 params['type'] = type
                 params['value'] = data
               }
               else {
                 params = data
-                params['zone'] = $scope.servername
+                params['zone'] = $scope.zone
                 params['type'] = type
               }
               console.log(data)
               $http.delete("/backend/api/dns", {"params":params})
               .then(function(response) {
                   //console.log("Updating zone after removing entry" + data['name'] )
-                  $scope.getZoneDetails($scope.servername)
+                  $scope.getZoneDetails()
                 });
           
           };
