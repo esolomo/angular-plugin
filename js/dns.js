@@ -160,6 +160,89 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
 
   $scope.getZoneDetails();
 
+  $scope.addRecord = function(type,zone,name,value,ttl,target,port,weight,priority,protocol) {
+  
+        var data = {'type':type,'zone':zone}
+        if (type == 'A' || type == 'AAAA' || type == 'CNAME'){
+          data['destination'] = value
+          data['ttl'] = ttl
+          data['name'] = name
+        }
+        else if (type == 'TXT' ) {
+          data['entry'] = value
+          data['name'] = name
+        }
+        else if (type == 'SPF' ) {
+          data['entry'] = value
+          data['ttl'] = ttl
+          data['name'] = name
+        }
+        else if (type == 'SRV'){
+          data['target'] = target
+          data['port'] = port
+          data['weight'] = weight
+          data['priority'] = priority
+          data['protocol'] = protocol
+          data['ttl'] = ttl
+        }
+        else if (type == 'MX'){
+          data['priority'] = value
+          data['name'] = name
+        }
+        else if (type == 'managed_zones'){
+          data['managed_zones'] = value
+          data['name'] = name
+        }
+        else if (type == 'ROOT_IPv4' || type == 'ROOT_IPv6'){
+          data['value'] = value
+          data['name'] = name
+        }
+        else if (type == 'TTL' ){
+          data['ttl'] = ttl
+          data['name'] = name
+        }
+
+        $http.put("/backend/api/dns", data, { headers : {'Content-Type' : 'application/json'} })
+        .then(function(response) {
+          $scope.getZoneDetails();
+        });    
+      };
+
+      $scope.addSRV_Record = function(type,zone,target,port,weight,priority,ttl,protocol) {
+        
+            var data = {'type':type,'zone':zone,'name':target}
+            if (type == 'A' || type == 'AAAA' || type == 'CNAME'){
+              data['destination'] = value
+              data['ttl'] = ttl
+            }
+            else if (type == 'TXT'){
+              data['entry'] = value
+            }
+            else if (type == 'SRV'){
+              data['entry'] = value
+            }
+            else if (type == 'SPF'){
+              data['entry'] = value
+            }
+            else if (type == 'MX'){
+              data['priority'] = value
+            }
+            else if (type == 'managed_zones'){
+              data['managed_zones'] = value
+            }
+            else if (type == 'ROOT_IPv4' || type == 'ROOT_IPv6'){
+              data['value'] = value
+            }
+            else if (type == 'TTL' ){
+              data['ttl'] = ttl
+            }
+    
+            $http.put("/backend/api/dns", data, { headers : {'Content-Type' : 'application/json'} })
+            .then(function(response) {
+              $scope.getZoneDetails();
+            });    
+          };
+        
   $(document.body).on('hidden.bs.modal', function () {
     console.log("RecordsCtrl Catch hiding event on window");
     $('input[name=AddZone]').val("")
