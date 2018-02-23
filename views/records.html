@@ -102,9 +102,9 @@
                     </tr>
                   </table>
                   <br></br>
-                  <button  ng-hide="(root_ipv4.length == 0) ? true : false" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_IPv4.html')"   class="pull-right btn btn-primary">Add Record</button>                
+                  <button  ng-hide="(root_ipv4.length == 0) ? true : false" data-toggle="modal" data-target="#AddIPv4"   class="pull-right btn btn-primary">Add Record</button>                
                   <br></br>
-                  <button  ng-hide="(root_ipv4.length == 0) ? false : true" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/addZoneRecords_IPv4.html')"  style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button> 
+                  <button  ng-hide="(root_ipv4.length == 0) ? false : true" data-toggle="modal" data-target="#AddIPv4" style="position:relative; margin: 40px -200px; top:50%; left:50%;" class=" btn btn-primary">Create first Record</button> 
             </div>
             <div class="tab-pane  fade" id="ipv6">
                 <table ng-hide="(root_ipv6.length == 0) ? true : false" class="table  table-hover ">
@@ -387,5 +387,13 @@
     <hr style="margin-top: 200px;"></hr>
 
     <ng-include src="'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/modals/addZoneRecords_subzone.html'"></ng-include>	
-
+    <ng-include src="'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/modals/addZoneRecords_IPv4.html'"></ng-include>	
+    <ng-include src="'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/modals/addZoneRecords_IPv6.html'"></ng-include>	
+    <ng-include src="'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/modals/addZoneRecords_A.html'"></ng-include>
+    <ng-include src="'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/modals/addZoneRecords_AAAA.html'"></ng-include>
+    <ng-include src="'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/modals/addZoneRecords_CNAME.html'"></ng-include>
+    <ng-include src="'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/modals/addZoneRecords_MX.html'"></ng-include>
+    <ng-include src="'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/modals/addZoneRecords_TXT.html'"></ng-include>
+    <ng-include src="'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/modals/addZoneRecords_SRV.html'"></ng-include>
+    <ng-include src="'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/modals/addZoneRecords_SPF.html'"></ng-include>
 </section>
