@@ -253,7 +253,30 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
               $scope.getZoneDetails();
             });    
           };
-        
+
+          $scope.removeRecord = function(type, data) {
+            
+              //console.log("Request to remove entry " + data['name'] + " from type : " + type + " and zone " + $scope.servername)
+              var params = {}
+              if (typeof data === 'string' || data instanceof String){
+                params['zone'] = $scope.servername
+                params['type'] = type
+                params['value'] = data
+              }
+              else {
+                params = data
+                params['zone'] = $scope.servername
+                params['type'] = type
+              }
+              console.log(data)
+              $http.delete("/api/api/dns", {"params":params})
+              .then(function(response) {
+                  //console.log("Updating zone after removing entry" + data['name'] )
+                  $scope.getZoneDetails($scope.servername)
+                });
+          
+          };
+
   $(document.body).on('hidden.bs.modal', function () {
     console.log("RecordsCtrl Catch hiding event on window");
     $('input[name=AddZone]').val("");
