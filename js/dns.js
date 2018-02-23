@@ -162,7 +162,7 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
 
   $scope.addRecord = function(type,zone,name,value,ttl,target,port,weight,priority,protocol) {
   
-        var data = {'type':type,'zone':zone}
+        var data = {'type':type,'zone':zone, username: WP.user_login}
         if (type == 'A' || type == 'AAAA' || type == 'CNAME'){
           data['destination'] = value
           data['ttl'] = ttl
@@ -210,7 +210,7 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
 
       $scope.addSRV_Record = function(type,zone,target,port,weight,priority,ttl,protocol) {
         
-            var data = {'type':type,'zone':zone,'name':target}
+            var data = {'type':type,'zone':zone,'name':target, username: WP.user_login}
             if (type == 'A' || type == 'AAAA' || type == 'CNAME'){
               data['destination'] = value
               data['ttl'] = ttl
