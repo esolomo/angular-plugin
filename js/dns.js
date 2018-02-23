@@ -29,7 +29,7 @@ dnsApp.run( function( $rootScope, _ ) {
 } );
 
 // Route
-dnsApp.config( function( $stateProvider, WP ) {
+dnsApp.config( function( $stateProvider) {
   $stateProvider.state( {
       name: 'dashboard',
       url: '/index.php/api/dashboard',
@@ -40,7 +40,7 @@ dnsApp.config( function( $stateProvider, WP ) {
 } );
 
 // Route
-dnsApp.config( function( $stateProvider, WP ) {
+dnsApp.config( function( $stateProvider) {
   $stateProvider.state( {
       name: 'dns',
       url: '/index.php/api/dns',
@@ -50,17 +50,17 @@ dnsApp.config( function( $stateProvider, WP ) {
 } );
 
 // Route
-dnsApp.config( function( $stateProvider, WP ) {
+dnsApp.config( function( $stateProvider) {
   $stateProvider.state( {
       name: 'dnsapi',
       url: '/api/dns',
       templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dns.html',
-      controller: 'TodoListController'
+      controller: 'DNSCtrl'
   } );
 } );
 
 // Route
-dnsApp.config( function( $stateProvider, WP ) {
+dnsApp.config( function( $stateProvider) {
   $stateProvider.state( {
       name: 'records',
       url: '/api/records/:zoneId',
@@ -70,45 +70,15 @@ dnsApp.config( function( $stateProvider, WP ) {
 } );
 
 // Route
-dnsApp.config( function( $stateProvider, WP) {
+dnsApp.config( function( $stateProvider) {
   $stateProvider.state( {
-      name: 'dns2',
-      url: '/',
-      templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/dns.html',
-      controller: 'TodoListController'
+      name: 'ftp',
+      url: '/api/ftp',
+      templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/ftp.html',
+      controller: 'FTPCtrl'
   } );
 } );
 
-dnsApp.controller('TodoListController', function($scope,  $window) {
-  var todoList = this;
-  console.log("In the controller");
-  console.log($window.WP.user_login);
-  todoList.todos = [
-    {text:'learn AngularJS', done:true},
-    {text:'build an AngularJS app', done:false}];
-
-  todoList.addTodo = function() {
-    todoList.todos.push({text:todoList.todoText, done:false});
-    todoList.todoText = '';
-  };
-
-  todoList.remaining = function() {
-    var count = 0;
-    angular.forEach(todoList.todos, function(todo) {
-      count += todo.done ? 0 : 1;
-    });
-    return count;
-  };
-
-  todoList.archive = function() {
-    var oldTodos = todoList.todos;
-    todoList.todos = [];
-    angular.forEach(oldTodos, function(todo) {
-      if (!todo.done) todoList.todos.push(todo);
-    });
-  };
-
-});
 
 dnsApp.controller('DNSCtrl', function($scope, $http) {
   var todoList = this;
@@ -131,7 +101,6 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
   };
   $scope.getZones()
 
-  $scope.new_zone = "";
   $scope.addZone = function (zone) {
     $http.post("/backend/api/dns",  {"name":zone, 'username' : WP.user_login} ,{headers : {'Content-Type' : 'application/json'}})
     .then(function(response) {
@@ -151,7 +120,6 @@ dnsApp.controller('DNSCtrl', function($scope, $http) {
     console.log("Catch hiding event on window");
     $('input[name=AddZone]').val("")
   });
-
 
 });
 
@@ -191,4 +159,10 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
       };
 
   $scope.getZoneDetails();
+
+  $(document.body).on('hidden.bs.modal', function () {
+    console.log("RecordsCtrl Catch hiding event on window");
+    $('input[name=AddZone]').val("")
+  });
+
 });
