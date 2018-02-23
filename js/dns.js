@@ -112,6 +112,7 @@ dnsApp.controller('TodoListController', function($scope,  $window) {
 
 dnsApp.controller('DNSCtrl', function($scope, $http) {
   var todoList = this;
+  plugin_url = WP.plugin_url
   var config = {
     params: { 'username' : WP.user_login},
     headers : {'Content-Type' : 'application/json'}
