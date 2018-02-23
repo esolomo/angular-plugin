@@ -204,7 +204,16 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
 
         $http.put("/backend/api/dns", data, { headers : {'Content-Type' : 'application/json'} })
         .then(function(response) {
+          $('#AddSubzone').modal('hide');
           $('#AddIPv4').modal('hide');
+          $('#AddIPv6').modal('hide');
+          $('#Add_A').modal('hide');
+          $('#AddAAAA').modal('hide');
+          $('#AddCNAME').modal('hide');
+          $('#AddMX').modal('hide');
+          $('#AddTXT').modal('hide');
+          $('#AddSRV').modal('hide');
+          $('#AddSPF').modal('hide');
           $scope.getZoneDetails();
         });    
       };
