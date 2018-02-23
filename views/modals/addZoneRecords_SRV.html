@@ -21,23 +21,23 @@
             </div>
 
             <div class="form-group"  >
-                  <label >target </label> <input type="text" class="form-control" ng-model="target"  placeholder="target"/>
+                  <label >target </label> <input type="text"  name="srv_target"  class="form-control" ng-model="target"  placeholder="target"/>
             </div>
 
             <div class="form-group"  >
-                  <label >port </label> <input type="text" class="form-control" ng-model="port"  placeholder="port"/>
+                  <label >port </label> <input type="text" name="srv_port"  class="form-control" ng-model="port"  placeholder="port"/>
             </div>
             <div class="form-group"  >
-                  <label >weight </label> <input type="text" class="form-control" ng-model="weight"  placeholder="weight"/>
+                  <label >weight </label> <input type="text" name="srv_weight"  class="form-control" ng-model="weight"  placeholder="weight"/>
             </div>
             <div class="form-group"  >
-                  <label >priority </label> <input type="text" class="form-control" ng-model="priority"  placeholder="priority"/>
+                  <label >priority </label> <input type="text" name="srv_priority"  class="form-control" ng-model="priority"  placeholder="priority"/>
             </div>
             <div class="form-group"  >
-                  <label >ttl </label> <input type="text" class="form-control" ng-model="ttl_value"  placeholder="ttl"/>
+                  <label >ttl </label> <input type="text" name="srv_ttl"  class="form-control" ng-model="ttl_value"  placeholder="ttl"/>
             </div>
             <div class="form-group"  >
-                  <label >protocol </label> <input type="text" class="form-control" ng-model="protocol"  placeholder="protocol"/>
+                  <label >protocol </label> <input type="text" name="srv_protocol"  class="form-control" ng-model="protocol"  placeholder="protocol"/>
             </div>
 
             <button  type="submit" class="btn btn-default" ng-click="addRecord('SRV',zone,null,null,ttl_value,target,port,weight,priority,protocol)" >Submit</button>                            

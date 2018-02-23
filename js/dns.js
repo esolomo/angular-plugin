@@ -257,7 +257,30 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
   $(document.body).on('hidden.bs.modal', function () {
     console.log("RecordsCtrl Catch hiding event on window");
     $('input[name=AddZone]').val("");
-    $('input[name=AddIPv4_IP_value]').val("");
+    $('input[name=AddIPv4_IP_value]').val(""); 
+    $('input[name=subzone_domain]').val(""); 
+    $('input[name=AddIPv6_IP_value]').val(""); 
+    $('input[name=mx_name]').val(""); 
+    $('input[name=mx_priority]').val(""); 
+    $('input[name=a_name]').val(""); 
+    $('input[name=a_value]').val(""); 
+    $('input[name=a_ttl]').val(""); 
+    $('input[name=aaaa_name]').val(""); 
+    $('input[name=aaaa_value]').val(""); 
+    $('input[name=aaaa_ttl]').val(""); 
+    $('input[name=spf_name]').val(""); 
+    $('input[name=spf_value]').val(""); 
+    $('input[name=spf_ttl]').val(""); 
+    $('input[name=domain]').val(""); 
+    $('input[name=srv_target]').val(""); 
+    $('input[name=srv_port]').val(""); 
+    $('input[name=srv_weight]').val(""); 
+    $('input[name=srv_priority]').val(""); 
+    $('input[name=srv_ttl]').val(""); 
+    $('input[name=srv_protocol]').val(""); 
+    $('input[name=txt_name]').val(""); 
+    $('input[name=txt_entry]').val(""); 
+
   });
 
 });

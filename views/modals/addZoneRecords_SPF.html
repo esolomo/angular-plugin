@@ -21,15 +21,15 @@
           </div>
 
           <div class="form-group"  >
-                <label >name </label> <input type="text" class="form-control" ng-model="name"  placeholder="name"/>
+                <label >name </label> <input type="text"  name="spf_name" class="form-control" ng-model="name"  placeholder="name"/>
           </div>
 
           <div class="form-group"  >
-            <label >entry </label> <input type="text" class="form-control" ng-model="value"  placeholder="entry"/>
+            <label >entry </label> <input type="text" name="spf_value" class="form-control" ng-model="value"  placeholder="entry"/>
           </div>
 
           <div class="form-group"  >
-            <label >ttl </label> <input type="text" class="form-control" ng-model="ttl_value"  placeholder="ttl"/>
+            <label >ttl </label> <input type="text" name="spf_ttl" class="form-control" ng-model="ttl_value"  placeholder="ttl"/>
           </div>
 
           <button  type="submit" class="btn btn-default" ng-click="addRecord('SPF',zone,name,value,ttl_value)" >Submit</button>                            
