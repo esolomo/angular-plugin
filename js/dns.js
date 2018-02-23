@@ -258,6 +258,7 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
             
               //console.log("Request to remove entry " + data['name'] + " from type : " + type + " and zone " + $scope.servername)
               var params = {}
+              console.log("Delete request for username : " + WP.user_login)
               params['username'] = WP.user_login;
               if (typeof data === 'string' || data instanceof String){
                 params['zone'] = $scope.zone
