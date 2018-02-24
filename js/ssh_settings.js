@@ -1,6 +1,6 @@
 
 // App module
-var dnsApp =  angular.module('SshSettingsApp', [
+var SshSettingsApp =  angular.module('SshSettingsApp', [
   'ng',
   'ngResource',
   'ngSanitize',
