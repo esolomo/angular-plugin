@@ -52,7 +52,7 @@ SshSettingsApp.controller('SShKeysCtrl', function($scope, $http) {
   console.log(JSON.stringify(WP));
 
   $scope.getSettings = function () {
-    $http.get("/backend/api/settings/ssh",  { params: { 'username' : WP.user_login}, headers : {'Content-Type' : 'application/json'} })
+    $http.get("/backend/api/settings/ssh",  config )
     .then(function(response) {
             if (response.data['status'] === "Success"){
               $scope.settings = response.data['results'];
