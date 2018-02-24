@@ -36,7 +36,7 @@ SshSettingsApp.run(['editableOptions', function(editableOptions) {
 SshSettingsApp.config( function( $stateProvider) {
   $stateProvider.state( {
       name: 'sshkeys',
-      url: '/index.php/api/sshkeys',
+      url: '/index.php/api/settings/ssh',
       templateUrl: 'http://wordpress.betterdevops.co.uk/wp-content/plugins/betterdevops/views/sshkeys.html',
       controller: 'SShKeysCtrl'
   } );
