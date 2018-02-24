@@ -63,6 +63,7 @@ SshSettingsApp.controller('SShKeysCtrl', function($scope, $http) {
         });
   };
 
+  $scope.getSettings();
 
 
   $(document.body).on('hidden.bs.modal', function () {
