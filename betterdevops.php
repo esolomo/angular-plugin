@@ -193,8 +193,8 @@ class ngApp
 		}
 		elseif ($url_match_ssh_settings)
 		{
-			error_log("Match zones");
-			$this->base_href = $angular_ftp ;
+			error_log("Match Ssh Settings");
+			$this->base_href = $angular_ssh_settings ;
 			$base_index = 'views/ssh_settings.php';
 			$page_title = 'BetterDevOps Ssh Settings';					
 		}		
