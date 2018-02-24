@@ -165,6 +165,25 @@ dnsApp.controller('RecordsCtrl', function($scope, $http, $stateParams) {
 
   $scope.getZoneDetails();
 
+  $scope.storeTTL= function(ttl) {
+    $scope.old_ttl = ttl
+  }
+  
+  $scope.updateTTL= function(ttl) {
+  
+    if ( $scope.old_ttl  == ttl ){
+      
+    }
+    else{
+      var data = {'type':'TTL','zone': $scope.zone, 'ttl':ttl, username: WP.user_login }
+      $http.put("/backend/api/dns", data, { headers : {'Content-Type' : 'application/json'} })
+      .then(function(response) {
+        $scope.getZoneDetails($scope.zone)
+      });
+  
+    }
+  }
+
   $scope.addRecord = function(type,zone,name,value,ttl,target,port,weight,priority,protocol) {
   
         var data = {'type':type,'zone':zone, username: WP.user_login}
