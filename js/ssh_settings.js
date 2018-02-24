@@ -49,6 +49,7 @@ SshSettingsApp.controller('SShKeysCtrl', function($scope, $http) {
     params: { 'username' : WP.user_login},
     headers : {'Content-Type' : 'application/json'}
    };
+
   console.log(JSON.stringify(WP));
 
   $scope.getSettings = function () {
@@ -66,9 +67,45 @@ SshSettingsApp.controller('SShKeysCtrl', function($scope, $http) {
   $scope.getSettings();
 
 
+  $scope.removeSSH_ID = function(name) {
+    
+      $http.delete("/backend/api/settings/ssh", {"params": {'name':name,'username' : WP.user_login} })
+      .then(function(response) {
+            //$scope.open('app/pages/ui/modals/modalTemplates/SettingsUpdate.html')
+            $scope.getSettings()
+      });
+  };
+
+  $scope.createSSH_ID = function(name,ssh_user,ssh_key) {
+    
+          $http.post("/backend/api/settings/ssh", {'name':name,'ssh_user':ssh_user,'ssh_key':ssh_key,'username' : WP.user_login}, { headers : {'Content-Type' : 'application/json'} })
+          .then(function(response) {
+               //$scope.open('app/pages/ui/modals/modalTemplates/SettingsUpdate.html')
+               $scope.getSettings()
+            });
+  };
+
+  $scope.UpdateSSH_User = function(user_id, user) {
+          $http.put("/backend/api/settings/ssh", {'name':user_id.name,'ssh_user': user,'ssh_key':user_id.ssh_key,'username' : WP.user_login}, { headers : {'Content-Type' : 'application/json'} })
+          .then(function(response) {
+               //$scope.open('app/pages/ui/modals/modalTemplates/SettingsUpdate.html')
+               $scope.getSettings()
+            });
+  };
+
+  $scope.UpdateSSH_Key = function(user_id, key) {
+          $http.put("/backend/api/settings/ssh", {'name':user_id.name,'ssh_user':user_id.ssh_user,'ssh_key': key,'username' : WP.user_login}, { headers : {'Content-Type' : 'application/json'} })
+          .then(function(response) {
+               //$scope.open('app/pages/ui/modals/modalTemplates/SettingsUpdate.html')
+               $scope.getSettings()
+            });
+  };
+
   $(document.body).on('hidden.bs.modal', function () {
     console.log("Catch hiding event on window");
-    $('input[name=AddZone]').val("")
+    $('input[name=keyname]').val("")
+    $('input[name=user]').val("")
+    $('input[name=rsakey]').val("")
   });
 
 });

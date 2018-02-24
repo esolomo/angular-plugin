@@ -1,3 +1,5 @@
+<div class="modal fade" id="AddSShKey" role="dialog">
+        <div class="modal-dialog">
 <div class="modal-content">
         <!-- Modal Header -->
         <div class="modal-header">
@@ -14,13 +16,13 @@
         <div class="modal-body">
             <form role="form">  
               <div class="form-group">
-                <label for="key_name">Key Name </label> <input type="text" class="form-control" ng-model="key_name"  placeholder="Key Name"></input>
+                <label for="key_name">Key Name </label> <input type="text" name="keyname" class="form-control" ng-model="key_name"  placeholder="Key Name"></input>
               </div>
               <div class="form-group">
-                    <label for="ssh_user">SSH User </label> <input type="text" class="form-control" ng-model="ssh_user"  placeholder="ssh user"></input>
+                    <label for="ssh_user">SSH User </label> <input type="text" name="user" class="form-control" ng-model="ssh_user"  placeholder="ssh user"></input>
               </div>
               <div class="form-group">
-                    <label for="rsa_key">RSA Key</label> <textarea  type="text" class="form-control"   ng-model="rsa_key"  placeholder="Password"></textarea>
+                    <label for="rsa_key">RSA Key</label> <textarea  type="text"   name="rsakey" class="form-control"   ng-model="rsa_key"  placeholder="rsa key"></textarea>
               </div>
               <button type="submit" class="btn btn-default" ng-click="addSSHKey(key_name,ssh_user,rsa_key)" >Submit</button>
             </form>  
@@ -33,5 +35,5 @@
     </div>
 
 
-
+</div>
 </div>
