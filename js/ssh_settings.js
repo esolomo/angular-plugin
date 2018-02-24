@@ -72,6 +72,7 @@ SshSettingsApp.controller('SShKeysCtrl', function($scope, $http) {
     .then(function(response) {
         console.log("Adding ssh key");
         $('#AddSShKey').modal('hide');
+        $scope.getSettings();
         //$rootScope.getSettings()
         //$scope.open('app/pages/ui/modals/modalTemplates/SettingsUpdate.html')
       });
@@ -83,7 +84,7 @@ SshSettingsApp.controller('SShKeysCtrl', function($scope, $http) {
       $http.delete("/backend/api/settings/ssh", {"params": {'name':name,'username' : WP.user_login} })
       .then(function(response) {
             //$scope.open('app/pages/ui/modals/modalTemplates/SettingsUpdate.html')
-            $scope.getSettings()
+            $scope.getSettings();
       });
   };
 
@@ -92,7 +93,7 @@ SshSettingsApp.controller('SShKeysCtrl', function($scope, $http) {
           $http.post("/backend/api/settings/ssh", {'name':name,'ssh_user':ssh_user,'ssh_key':ssh_key,'username' : WP.user_login}, { headers : {'Content-Type' : 'application/json'} })
           .then(function(response) {
                //$scope.open('app/pages/ui/modals/modalTemplates/SettingsUpdate.html')
-               $scope.getSettings()
+               $scope.getSettings();
             });
   };
 
@@ -100,7 +101,7 @@ SshSettingsApp.controller('SShKeysCtrl', function($scope, $http) {
           $http.put("/backend/api/settings/ssh", {'name':user_id.name,'ssh_user': user,'ssh_key':user_id.ssh_key,'username' : WP.user_login}, { headers : {'Content-Type' : 'application/json'} })
           .then(function(response) {
                //$scope.open('app/pages/ui/modals/modalTemplates/SettingsUpdate.html')
-               $scope.getSettings()
+               $scope.getSettings();
             });
   };
 
@@ -108,7 +109,7 @@ SshSettingsApp.controller('SShKeysCtrl', function($scope, $http) {
           $http.put("/backend/api/settings/ssh", {'name':user_id.name,'ssh_user':user_id.ssh_user,'ssh_key': key,'username' : WP.user_login}, { headers : {'Content-Type' : 'application/json'} })
           .then(function(response) {
                //$scope.open('app/pages/ui/modals/modalTemplates/SettingsUpdate.html')
-               $scope.getSettings()
+               $scope.getSettings();
             });
   };
 
