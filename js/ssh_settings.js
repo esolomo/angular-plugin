@@ -117,7 +117,7 @@ SshSettingsApp.controller('SShKeysCtrl', function($scope, $http) {
     console.log("Catch hiding event on window");
     $('input[name=keyname]').val("")
     $('input[name=user]').val("")
-    $('input[name=rsakey]').val("")
+    $('textarea[name=rsakey]').val("")
   });
 
 });
