@@ -5,7 +5,8 @@ var dnsApp =  angular.module('dnsApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ngAnimate'
+  'ngAnimate',
+  'xeditable'
 ]);
 
 // Third-party support
@@ -23,10 +24,13 @@ dnsApp.run( function( $rootScope, _ ) {
 
     // Log routing errors
     $rootScope.$on( "$stateChangeError", console.error.bind( console, '$stateChangeError' ) );
-
     // Global lodash
     $rootScope._ = window._;
 } );
+
+dnsApp.run(['editableOptions', function(editableOptions) {
+  editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+}]);
 
 // Route
 dnsApp.config( function( $stateProvider) {
