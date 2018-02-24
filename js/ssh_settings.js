@@ -71,6 +71,7 @@ SshSettingsApp.controller('SShKeysCtrl', function($scope, $http) {
     $http.post("/backend/api/settings/ssh", {'name':key_name, 'ssh_user':ssh_user, 'ssh_key':ssh_key,'username' : WP.user_login}, { headers : {'Content-Type' : 'application/json'} })
     .then(function(response) {
         console.log("Adding ssh key");
+        $('#AddSShKey').modal('hide');
         //$rootScope.getSettings()
         //$scope.open('app/pages/ui/modals/modalTemplates/SettingsUpdate.html')
       });
