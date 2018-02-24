@@ -161,11 +161,13 @@ class ngApp
 		$angular_dns = "/index.php/api/dns";
 		$angular_ftp = "/index.php/api/ftp";		
 		$angular_zones = "/index.php/api/zones";
+		$angular_ssh_settings = "/index.php/settings/ssh";
 		error_log($_SERVER['REQUEST_URI']);
 		$url_match_dashboard = ( substr( $_SERVER['REQUEST_URI'], 0, strlen( $angular_dashboard ) ) === $angular_dashboard );
 		$url_match_dns = ( substr( $_SERVER['REQUEST_URI'], 0, strlen( $angular_dns ) ) === $angular_dns );
 		$url_match_ftp = ( substr( $_SERVER['REQUEST_URI'], 0, strlen( $angular_ftp ) ) === $angular_ftp );		
-		$url_match_zones = ( substr( $_SERVER['REQUEST_URI'], 0, strlen( $angular_zones ) ) === $angular_zones );		
+		$url_match_zones = ( substr( $_SERVER['REQUEST_URI'], 0, strlen( $angular_zones ) ) === $angular_zones );
+		$url_match_ssh_settings = ( substr( $_SERVER['REQUEST_URI'], 0, strlen( $angular_ssh_settings ) ) === $angular_ssh_settings );		
 		error_log($url_match_dashboard);
 		$base_index = 'views/index.php';
 		if ($url_match_dashboard)
@@ -173,18 +175,28 @@ class ngApp
 			error_log("Match dashboard");
 			$this->base_href = $angular_dashboard ;
 			$base_index = 'views/dashboard.php';
+			$page_title = 'BetterDevOps Ssh Settings';
 		}
 		elseif ($url_match_dns)
 		{
 			error_log("Match dns");
 			$this->base_href = $angular_dns ;
-			$base_index = 'views/dns.php';		
+			$base_index = 'views/dns.php';
+			$page_title = 'BetterDevOps DNS';			
 		}
 		elseif ($url_match_ftp)
 		{
 			error_log("Match zones");
 			$this->base_href = $angular_ftp ;
-			$base_index = 'views/ftp.php';						
+			$base_index = 'views/ftp.php';
+			$page_title = 'BetterDevOps FTP';							
+		}
+		elseif ($url_match_ssh_settings)
+		{
+			error_log("Match zones");
+			$this->base_href = $angular_ftp ;
+			$base_index = 'views/ssh_settings.php';
+			$page_title = 'BetterDevOps Ssh Settings';					
 		}		
 		else{
 		        error_log("Does not Match");		
@@ -203,7 +215,7 @@ class ngApp
 		error_log('Current Email : ');
 		error_log($user_login);		
 		$base_href = $this->base_href;
-		$page_title = 'BetterDevOps DashBoard';
+		//$page_title = 'BetterDevOps DashBoard';
 
 		// Browser caching for our main template
 		$ttl = DAY_IN_SECONDS;
