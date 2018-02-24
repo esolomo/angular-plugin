@@ -161,7 +161,7 @@ class ngApp
 		$angular_dns = "/index.php/api/dns";
 		$angular_ftp = "/index.php/api/ftp";		
 		$angular_zones = "/index.php/api/zones";
-		$angular_ssh_settings = "/index.php/settings/ssh";
+		$angular_ssh_settings = "/index.php/api/settings/ssh";
 		error_log($_SERVER['REQUEST_URI']);
 		$url_match_dashboard = ( substr( $_SERVER['REQUEST_URI'], 0, strlen( $angular_dashboard ) ) === $angular_dashboard );
 		$url_match_dns = ( substr( $_SERVER['REQUEST_URI'], 0, strlen( $angular_dns ) ) === $angular_dns );
