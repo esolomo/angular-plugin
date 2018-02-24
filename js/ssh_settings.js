@@ -44,41 +44,26 @@ SshSettingsApp.config( function( $stateProvider) {
 
 
 SshSettingsApp.controller('SShKeysCtrl', function($scope, $http) {
-  var todoList = this;
   plugin_url = WP.plugin_url
   var config = {
     params: { 'username' : WP.user_login},
     headers : {'Content-Type' : 'application/json'}
    };
   console.log(JSON.stringify(WP));
-  $scope.getZones = function (zone) {
-    $http.get("/backend/api/dns",  config)
+
+  $scope.getSettings = function () {
+    $http.get("/api/settings/ssh",  { params: { 'username' : WP.user_login}, headers : {'Content-Type' : 'application/json'} })
     .then(function(response) {
             if (response.data['status'] === "Success"){
-              $scope.records = response.data['results'];
+              $scope.settings = response.data['results'];
             }
             else{
-              $scope.records = [] 
+              $scope.settings = [] 
             }
         });
   };
-  $scope.getZones()
 
-  $scope.addZone = function (zone) {
-    $http.post("/backend/api/dns",  {"name":zone, 'username' : WP.user_login} ,{headers : {'Content-Type' : 'application/json'}})
-    .then(function(response) {
-      $('#AddZone').modal('hide');
-      $scope.getZones();
-    })
-  };
 
-  $scope.removeZone = function (zone) {
-    console.log('In Removing zone');
-    $http.delete("/backend/api/dns",  {"params":{"zone":zone, 'username' : WP.user_login, "type":"full"}})
-    .then(function(response) {
-            $scope.getZones()
-        });
-  };
 
   $(document.body).on('hidden.bs.modal', function () {
     console.log("Catch hiding event on window");
